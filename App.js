@@ -13,7 +13,10 @@ export default class App extends Component {
         });
         await Updates.fetchUpdateAsync();
         Updates.reloadFromCache();
-      }
+      } else
+        this.setState({
+          status: "no update found"
+        });
     } catch (e) {
       console.log(e);
 
